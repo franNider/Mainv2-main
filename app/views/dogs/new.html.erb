@@ -1,0 +1,53 @@
+<h1>Cargar perro</h1>
+<%= form_with(model: @dog) do |form| %>
+    <div class="alert alert.prymary">
+ <% @dog.errors.full_messages.each do |error| %>
+    <li>
+      <%= error %>
+    </li>
+  <% end %>
+</div>
+    <div>
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre %>
+    </div>
+
+    <div>
+        <%= form.label :raza %>
+        <%= form.text_field :raza %>
+    </div>
+
+    <div>
+        <%= form.label :sexo %>
+         <%= form.select :sexo, ["Macho", "Hembra"]%>
+    </div>
+
+    <div>
+        <%= form.label :color %>
+        <%= form.text_field :color %>
+    </div>
+
+    <div>
+        <%= form.label :vacunas %>
+        <%= form.text_field :vacunas %>
+    </div>
+
+    <div>
+        <%= form.label :chequeos %>
+        <%= form.text_field :chequeos %>
+    </div>
+
+    <div>
+        <%= form.label :edad %>
+        <%= form.number_field :edad %>
+    </div>
+
+    <div>
+        <%= form.label :peso %>
+        <%= form.number_field :peso %>
+    </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
