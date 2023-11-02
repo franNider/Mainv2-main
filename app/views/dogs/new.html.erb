@@ -44,10 +44,11 @@
 
     <div>
         <%= form.label :peso %>
-        <%= form.number_field :peso %>
+        <%= form.number_field :peso , step: 0.01 %>
+        <h1>(En caso de usar decimales usar . )</h1>
     </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Guardar", class: "btn btn-info" %>
   </div>
 <% end %>

@@ -2,13 +2,13 @@ class Dog < ApplicationRecord
     validates :nombre, presence: true,
   format: {
     with: /\A[a-z-A-Z]+\z/,
-    message: :invalid
+    message: "solo se permiten letras en el nombre"
   }
 
   validates :raza, presence: true,
   format: {
     with: /\A[a-z-A-Z]+\z/,
-    message: :invalid
+    message: "solo se permiten letras en la raza"
   }
 
   validates :sexo, presence: true,
@@ -20,7 +20,7 @@ class Dog < ApplicationRecord
   validates :color, presence: true,
   format: {
     with: /\A[a-z-A-Z]+\z/,
-    message: :invalid
+    message: "solo se permiten letras en el color"
   }
 
   validates :vacunas, presence: true
@@ -30,6 +30,10 @@ class Dog < ApplicationRecord
 
   validates :peso, presence: true
   
-  validates :edad, presence: true
+  validates :edad, presence: true,
+  format: {
+    with: /\A[0-9]+\z/,
+    message: "debe tener solo números"
+  }
 
 end
